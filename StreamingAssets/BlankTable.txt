@@ -1,0 +1,15 @@
+{"HighScoreEntryList":
+	[
+		{"Score": 0, "Name": "AAA"},
+		{"Score": 0, "Name": "AAA"},
+		{"Score": 0, "Name": "AAA"},
+		{"Score": 0, "Name": "AAA"},
+		{"Score": 0, "Name": "AAA"},
+		{"Score": 0, "Name": "AAA"},
+		{"Score": 0, "Name": "AAA"},
+		{"Score": 0, "Name": "AAA"},
+		{"Score": 0, "Name": "AAA"},
+		{"Score": 0, "Name": "AAA"},
+		{"Score": 0, "Name": "AAA"}
+	]
+}

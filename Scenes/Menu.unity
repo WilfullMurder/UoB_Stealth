@@ -1384,7 +1384,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 94bb0afd7d691334da577cf1c4d854ce, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -3353,6 +3353,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4bad670012d9a948b68454e2cfdc712, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreEntry_UI: {fileID: 0}
+  PlayerScoreTracker: 0
+  PlayerNameTracker: 
   EntryTemplate: {fileID: 199449645}
   PositionText: {fileID: 569634158}
   ScoreText: {fileID: 528297333}

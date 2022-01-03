@@ -1,0 +1,1 @@
+{"HighScoreEntryList":[{"Score":70,"Name":"JAK"},{"Score":0,"Name":"AAA"},{"Score":0,"Name":"AAA"},{"Score":0,"Name":"AAA"},{"Score":0,"Name":"AAA"},{"Score":0,"Name":"AAA"},{"Score":0,"Name":"AAA"},{"Score":0,"Name":"AAA"},{"Score":0,"Name":"AAA"},{"Score":0,"Name":"AAA"},{"Score":0,"Name":"AAA"}]}

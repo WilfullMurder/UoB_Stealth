@@ -11,9 +11,10 @@ public class GuardClass : MonoBehaviour
     public float WaitTime = 0.3f;
     public float TurnSpeed = 90.0f;
     public float SpotTime = 1.0f;
+    public float ViewDistance = 12.0f;
 
     public Light SpotLight;
-    public float ViewDistance;
+    
     public LayerMask layerMask;
   
 
@@ -23,6 +24,18 @@ public class GuardClass : MonoBehaviour
     float SpottedTimer;
     Transform PlayerTransform;
     Color PatrolColor;
+
+    GuardClass()
+    {
+        MoveSpeed = 5.0f;
+        WaitTime = 0.3f;
+        TurnSpeed = 90.0f;
+        SpotTime = 1.0f;
+        ViewDistance = 12.0f;
+
+        
+
+    }
 
     void OnDrawGizmos()
     {
@@ -158,6 +171,14 @@ public class GuardClass : MonoBehaviour
             }
         }
     }
+
+    public void CeaseMovement()
+    {
+        MoveSpeed = 0.0f;
+        ViewDistance = 0.0f;
+    }
+
+
 }
 
 

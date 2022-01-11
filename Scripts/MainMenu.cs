@@ -8,19 +8,23 @@ using UoBStealthGame.UI;
 
 public class MainMenu : MonoBehaviour
 {
-
+  
     public HighScoreTable HST;
     public UI_Game gameUI;
     public void PlayGame()
     {
-            if (SceneManager.GetActiveScene().buildIndex <= 0)
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            }
-            else
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
-            }
+        int rand = Random.Range(1, 7); //exclusive max range
+
+        if (SceneManager.GetActiveScene().buildIndex <= 0)
+        {
+            
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + rand);
+             
+        }
+        else
+        {
+             SceneManager.LoadScene(0);
+        }
     }
 
 

@@ -184,45 +184,48 @@ namespace UoBStealthGame.Highscores
 
         public bool CheckScores(int ScoreTracker)
         {
-            Scorespath = Application.streamingAssetsPath + "/ScoresTable.txt"; //Get the pathfor ScoresTable.txt
-            ScoresToJSONString = File.ReadAllText(Scorespath); //Convert Json to string
-            PlayerPrefs.SetString("HighScoreTablepath", Scorespath);
-            PlayerPrefs.Save();
-
-            if (ScoresToJSONString.Length == 0)
+            if (ScoreTracker > 0)
             {
-                //ScoresTable.txt is empty, fill table from blank table, Overwrite ScoresTable
-                Scorespath = Application.streamingAssetsPath + "/BlankTable.txt";
-                ScoresToJSONString = File.ReadAllText(Scorespath);
-
-
-                File.WriteAllText(Application.streamingAssetsPath + "/ScoresTable.txt", ScoresToJSONString); //Write new table to ScoresTable.txt
-
-
                 Scorespath = Application.streamingAssetsPath + "/ScoresTable.txt"; //Get the pathfor ScoresTable.txt
                 ScoresToJSONString = File.ReadAllText(Scorespath); //Convert Json to string
-                //save the filepath to Player prefs
                 PlayerPrefs.SetString("HighScoreTablepath", Scorespath);
                 PlayerPrefs.Save();
-            }
 
-            //Load saved HighScores
-
-            CurrentHighScores = JsonUtility.FromJson<HighScores>(ScoresToJSONString);
-            HighScoreEntries = CurrentHighScores.HighScoreEntryList;
-
-            if (CurrentHighScores.HighScoreEntryList.Count > 0)
-            {
-                for (int i = 0; i < CurrentHighScores.HighScoreEntryList.Count; i++)
+                if (ScoresToJSONString.Length == 0)
                 {
-                    if (ScoreTracker >= CurrentHighScores.HighScoreEntryList[i].Score)
+                    //ScoresTable.txt is empty, fill table from blank table, Overwrite ScoresTable
+                    Scorespath = Application.streamingAssetsPath + "/BlankTable.txt";
+                    ScoresToJSONString = File.ReadAllText(Scorespath);
+
+
+                    File.WriteAllText(Application.streamingAssetsPath + "/ScoresTable.txt", ScoresToJSONString); //Write new table to ScoresTable.txt
+
+
+                    Scorespath = Application.streamingAssetsPath + "/ScoresTable.txt"; //Get the pathfor ScoresTable.txt
+                    ScoresToJSONString = File.ReadAllText(Scorespath); //Convert Json to string
+                                                                       //save the filepath to Player prefs
+                    PlayerPrefs.SetString("HighScoreTablepath", Scorespath);
+                    PlayerPrefs.Save();
+                }
+
+                //Load saved HighScores
+
+                CurrentHighScores = JsonUtility.FromJson<HighScores>(ScoresToJSONString);
+                HighScoreEntries = CurrentHighScores.HighScoreEntryList;
+
+                if (CurrentHighScores.HighScoreEntryList.Count > 0)
+                {
+                    for (int i = 0; i < CurrentHighScores.HighScoreEntryList.Count; i++)
                     {
-                        if (OnNewHighScore != null)
+                        if (ScoreTracker >= CurrentHighScores.HighScoreEntryList[i].Score)
                         {
-                            OnNewHighScore();
-                           
+                            if (OnNewHighScore != null)
+                            {
+                                OnNewHighScore();
+
+                            }
+                            return true;
                         }
-                        return true;
                     }
                 }
             }

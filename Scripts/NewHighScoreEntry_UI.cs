@@ -30,7 +30,7 @@ namespace UoBStealthGame.Highscores
 
         private char StringAsChar = 'A';
 
-        public int NewHighScore = 0;
+        //public int NewHighScore = 0;
 
         public void IncreaseNameChar(Button LastPressed)
         {
